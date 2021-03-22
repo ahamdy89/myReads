@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const ShelfSelect = ({shelf, onSelectChange}) => {
     return (
@@ -14,4 +15,8 @@ const ShelfSelect = ({shelf, onSelectChange}) => {
     )
 }
 
+ShelfSelect.propTypes = {
+    shelf: PropTypes.string.isRequired,
+    onSelectChange: PropTypes.func.isRequired,
+}
 export default ShelfSelect;
