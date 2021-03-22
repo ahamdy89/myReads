@@ -14,7 +14,7 @@ class SearchBook extends React.Component {
         if(searchValue.length > 0){
             search(searchValue)
             .then(books=> {
-                if((typeof books === 'undefined') || (books.includes('error'))){
+                if((typeof books === 'undefined') || (books.hasOwnProperty('error'))){
                     this.setState({searchedBooks: []})
                 }else{
                     this.setState({searchedBooks: books})
@@ -33,8 +33,8 @@ class SearchBook extends React.Component {
         return (
             <div className="search-books">
                 <div className="search-books-bar">
-                    <Link to="/">
-                        <button className="close-search">Close</button>
+                    <Link to="/" className="close-search">
+                        Close
                     </Link>
                     <div className="search-books-input-wrapper">
                         {/*
